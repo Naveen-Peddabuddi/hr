@@ -11,7 +11,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/resgister" element={<Register />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </ThemeProvider>
   );

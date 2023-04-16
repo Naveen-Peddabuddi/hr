@@ -7,7 +7,7 @@ const RHTextField = ({ variant, label, ...props }) => {
       <TextField
         label={label}
         variant={variant || "outlined"}
-        fullWidth
+        fullWidth={true}
         style={
           props.style || { backgroundColor: "white", border: "1px solid white" }
         }
