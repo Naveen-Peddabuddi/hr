@@ -1,10 +1,17 @@
 import { TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
-const RHTextField = ({ variant, label }) => {
+const RHTextField = ({ variant, label, ...props }) => {
   return (
     <Grid>
-      <TextField label={label} variant={variant || "outlined"} />
+      <TextField
+        label={label}
+        variant={variant || "outlined"}
+        fullWidth
+        style={
+          props.style || { backgroundColor: "white", border: "1px solid white" }
+        }
+      />
     </Grid>
   );
 };

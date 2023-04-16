@@ -1,11 +1,19 @@
+import { createTheme, ThemeProvider } from "@mui/material";
 import "./App.css";
 import Login from "./pages/Login";
+import { Route, Routes } from "react-router-dom";
+import Register from "./pages/Register";
+
+const theme = createTheme();
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+    <ThemeProvider theme={theme}>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/resgister" element={<Register />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
