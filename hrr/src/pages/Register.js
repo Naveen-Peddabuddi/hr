@@ -1,6 +1,8 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import RHPassword from "../components/common/RHPassword";
 import RHTextField from "../components/common/RHTextfield";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -11,12 +13,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   container1: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  input: {
+    // display: "flex",
+    // flexDirection: "column",
+    backgroundColor: "#131324",
+    color: "white",
+    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(2),
-    paddingTop: theme.spacing(2),
+    borderRadius: "2%",
+  },
+  inputGrid: {
+    paddingBottom: theme.spacing(2),
   },
   rootPaper: {
     paddingLeft: theme.spacing(2),
@@ -24,44 +30,76 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
     marginBottom: theme.spacing(1.5),
   },
-  spacing: {
-    padding: theme.spacing(2),
-    // marginBlockStart:'10px'
-  },
-  paper: {
-    padding: theme.spacing(3),
-  },
-  spacing1: {
-    // padding: theme.spacing(5),
-  },
-  circle: {
-    paddingBlock: theme.spacing(2),
-  },
-
-  title: {
-    paddingBlockEnd: theme.spacing(3),
-  },
 }));
 
 const Register = () => {
   const classes = useStyles();
   return (
     <Grid className={classes.container}>
-      <Grid>
-        <Grid className={classes.spacing}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        xs={10}
+        lg={4}
+        md={6}
+        className={classes.container1}
+      >
+        <Grid item xs={11} lg={11} md={11} className={classes.inputGrid}>
           <RHTextField label={"name"} />
         </Grid>
-        <Grid>
+        <Grid item xs={11} lg={11} md={11} className={classes.inputGrid}>
           <RHTextField label={"email"} />
         </Grid>
-        <Grid className={classes.spacing}>
-          <RHTextField label={"password"} />
+        <Grid item xs={11} lg={11} md={11} className={classes.inputGrid}>
+          <RHPassword
+            label={"password"}
+            type="password"
+            style={{ backgroundColor: "white" }}
+          />
         </Grid>
-        <Grid>
-          <RHTextField label={"confirm password"} />
+        <Grid item xs={11} lg={11} md={11} className={classes.inputGrid}>
+          <RHPassword
+            label={"confirm password"}
+            type="password"
+            style={{ backgroundColor: "white" }}
+          />
         </Grid>
-        <Grid className={classes.spacing}>
-          <Button variant="outlined">Create Account</Button>
+        <Grid
+          item
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          xs={11}
+          lg={11}
+          md={11}
+          className={classes.inputGrid}
+        >
+          <Button
+            fullWidth={true}
+            variant="outlined"
+            style={{ color: "white", border: "1px solid white" }}
+          >
+            Create Account
+          </Button>
+        </Grid>
+        <Grid item xs={11} lg={11} md={11} className={classes.inputGrid}>
+          <Typography
+            align="center"
+            style={{ fontSize: "10px", letterSpacing: "1px" }}
+          >
+            {`AREADY HAVE AN ACCOUNT? `}
+            <span
+              style={{
+                fontSize: "10px",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              <Link to="/">Login</Link>
+            </span>
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

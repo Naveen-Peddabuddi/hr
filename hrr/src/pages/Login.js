@@ -42,8 +42,8 @@ const Login = () => {
         justifyContent="center"
         alignItems="center"
         xs={10}
-        lg={4}
-        md={6}
+        lg={6}
+        md={3}
         className={classes.container1}
       >
         <Grid item xs={11} lg={11} md={11} className={classes.inputGrid}>
